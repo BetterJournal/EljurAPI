@@ -1,0 +1,37 @@
+{
+	"name": "@betterjournal/eljur-api",
+	"version": "0.0.0",
+	"description": "Unofficial documentation of Eljur (ЭлЖур) API",
+	"type": "module",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"types": "dist/esm/index.d.ts",
+	"exports": {
+		".": {
+			"import": {
+				"types": "./dist/esm/index.d.ts",
+				"default": "./dist/esm/index.js"
+			},
+			"require": {
+				"types": "./dist/cjs/index.d.cts",
+				"default": "./dist/cjs/index.cj"
+			}
+		}
+	},
+	"scripts": {
+		"build": "tsup"
+	},
+	"files": [
+		"dist"
+	],
+	"devDependencies": {
+		"@types/node": "^25.4.0",
+		"tslib": "^2.8.1",
+		"tsup": "^8.5.1",
+		"typescript": "^6.0.2"
+	},
+	"peerDependencies": {
+		"zod": ">=4.3.6"
+	},
+	"license": "WTFPL"
+}
