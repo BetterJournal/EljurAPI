@@ -1,7 +1,7 @@
 {
 	"name": "@betterjournal/eljur-api",
-	"version": "0.0.0",
-	"description": "Unofficial documentation of Eljur (ЭлЖур) API",
+	"version": "1.0.0",
+	"description": "Unofficial library with entities for Eljur (ЭлЖур) API",
 	"type": "module",
 	"main": "dist/cjs/index.js",
 	"module": "dist/esm/index.js",
@@ -14,7 +14,7 @@
 			},
 			"require": {
 				"types": "./dist/cjs/index.d.cts",
-				"default": "./dist/cjs/index.cj"
+				"default": "./dist/cjs/index.cjs"
 			}
 		}
 	},
