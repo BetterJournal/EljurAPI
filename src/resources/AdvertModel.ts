@@ -27,10 +27,10 @@ export const Advert = Message.pick({
 	text: true,
 	user_from: true
 }).extend({
-	date: z.iso.date(),
-	date_actual_before: z.iso.date(),
-	user_from_string: z.string(),
-	users_to: z.string()
+	date: AdvertPreview.shape.date,
+	date_actual_before: AdvertPreview.shape.date_actual_before,
+	user_from_string: AdvertPreview.shape.user_from_string,
+	users_to: AdvertPreview.shape.users_to
 });
 
 export type IAdvert = z.input<typeof Advert>;
