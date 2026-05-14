@@ -4,7 +4,7 @@ import { LessonExtraItem, LessonExtraItemRings, LessonItem, LessonItemRings } fr
 export const DiaryDay = z.object({
 	alert: z.string().optional(),
 	holiday_name: z.string().optional(),
-	items: z.record(z.number(), LessonItem),
+	items: z.record(LessonItem.shape.num, LessonItem),
 	items_extday: z.array(LessonExtraItem).optional(),
 	name: z.string(),
 	title: z.string()
@@ -13,7 +13,7 @@ export const DiaryDay = z.object({
 export type IDiaryDay = z.input<typeof DiaryDay>;
 
 export const DiaryDayRings = DiaryDay.extend({
-	items: z.record(z.number(), LessonItemRings),
+	items: z.record(LessonItemRings.shape.num, LessonItemRings),
 	items_extday: z.array(LessonExtraItemRings).optional()
 });
 

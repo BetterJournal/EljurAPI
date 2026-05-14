@@ -1,20 +1,20 @@
 import z from "zod";
 import { Absent, Assessment, Homework, HomeworkFile } from "@/resources";
+import { SubjectBase } from "@/utils";
 
 const Mark = Assessment.extend({
 	control_type: z.string(),
 	control_type_short: z.string()
 }).or(Absent);
 
-export const LessonItem = z.object({
+export const LessonItem = SubjectBase.extend({
 	assessments: z.array(Mark).optional(),
 	files: z.array(HomeworkFile),
 	grp: z.string().optional(),
 	grp_short: z.string().optional(),
-	homework: z.record(z.number(), Homework),
+	homework: z.record(Homework.shape.id, Homework),
 	is_control: z.boolean(),
 	lesson_id: z.coerce.number<string>(),
-	name: z.string(),
 	num: z.coerce.number<string>(),
 	payload_course_id: z.unknown(),
 	payload_id: z.unknown(),
