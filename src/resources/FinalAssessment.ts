@@ -1,5 +1,6 @@
 import z from "zod";
 import { Assessment } from "./MarkModel";
+import { Period } from "./PeriodModel";
 
 export const FinalAssessment = Assessment.pick({
 	color_hex: true,
@@ -7,7 +8,7 @@ export const FinalAssessment = Assessment.pick({
 	convert: true,
 	value: true
 }).extend({
-	period: z.string()
+	period: Period.shape.name
 });
 
 export type IFinalAssessment = z.input<typeof FinalAssessment>;
