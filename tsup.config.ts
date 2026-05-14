@@ -12,7 +12,7 @@ const defaultConfig = {
 	splitting: false,
 	treeshake: true,
 	tsconfig: "./tsconfig.json",
-	external: ["@tanstack/react-query", "zod"]
+	external: ["zod"]
 };
 
 export default defineConfig([
