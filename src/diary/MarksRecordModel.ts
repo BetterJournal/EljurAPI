@@ -23,7 +23,6 @@ export const SubjectMarks = SubjectBase.extend({
 	color_hex: z.unknown(),
 	lesson_id: z.coerce.number<string>(),
 	marks: z.array(Mark),
-	name: z.string()
 });
 
 export type ISubjectMarks = z.input<typeof SubjectMarks>;
