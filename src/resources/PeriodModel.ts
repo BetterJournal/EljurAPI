@@ -1,13 +1,14 @@
 import z from "zod";
 import { Week } from "./Week";
 
-export const Period = z.object({
+export const Period = Week.pick({
+	end: true,
+	start: true
+}).extend({
 	ambigious: z.unknown(),
 	disabled: z.unknown(),
-	end: z.string(),
 	fullname: z.string(),
-	name: z.string(),
-	start: z.string()
+	name: z.string()
 });
 
 export type IPeriod = z.input<typeof Period>;
