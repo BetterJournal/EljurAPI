@@ -6,13 +6,13 @@ const AssessmentBase = z.object({
 	convert: z.number(),
 	count: z.boolean(),
 	countas: z.coerce.number<string>(),
-	date: z.string(),
+	date: z.iso.date(),
 	lesson_id: z.coerce.number<string>(),
 	nm: z.coerce.number<string>()
 });
 
 export const Assessment = AssessmentBase.extend({
-	value: z.coerce.number<string>(),
+	value: z.string(),
 	weight: z.number(),
 	weight_float: z.number()
 });
@@ -21,7 +21,7 @@ export const Absent = AssessmentBase.extend({
 	convert: z.literal(0),
 	count: z.literal(false),
 	countas: z.literal(0),
-	value: z.enum(["н", "оп"])
+	value: z.enum(["н", "оп", "Н", "ОП"])
 });
 
 export const Mark = Assessment.or(Absent);
