@@ -41,9 +41,9 @@ export const StudentsRelation = z.object({
 export type IStudentsRelation = z.input<typeof StudentsRelation>;
 
 export const Relations = z.object({
-	groups: z.record(z.string(), GroupsRelation),
+	groups: z.record(GroupsRelation.shape.name, GroupsRelation),
 	schools: z.array(SchoolsRelation),
-	students: z.record(z.string(), StudentsRelation)
+	students: z.record(StudentsRelation.shape.name, StudentsRelation)
 });
 
 export type IRelations = z.input<typeof Relations>;
