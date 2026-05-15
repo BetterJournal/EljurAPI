@@ -1,9 +1,8 @@
 import z from "zod";
 import { Homework } from "./Homework";
+import { StoredFile } from "./StoredFile";
 
-export const HomeworkFile = z.object({
-	filename: z.string(),
-	link: z.httpUrl(),
+export const HomeworkFile = StoredFile.extend({
 	toid: Homework.shape.id
 });
 

@@ -25,7 +25,8 @@ export const Advert = Message.pick({
 	short_text: true,
 	subject: true,
 	text: true,
-	user_from: true
+	user_from: true,
+	files: true
 }).extend({
 	date: AdvertPreview.shape.date,
 	date_actual_before: AdvertPreview.shape.date_actual_before,

@@ -19,7 +19,24 @@ export {
 } from "./diary";
 export { AdvertInfoRecord, AdvertsRecord, MessageInfoRecord, MessageReceiversRecord, ReceiversGroup, MessagesRecord, SendMessage, SendReply } from "./mail";
 export { GroupsRelation, SchoolsRelation, StudentsRelation, Relations, UserProfileRecord, UserProfile, UserRules, UserVendors } from "./personal";
-export { Advert, AdvertPreview, FinalAssessment, Homework, HomeworkFile, Assessment, Absent, Mark, Message, MessagePreview, Period, PeriodWeeks, UploadedFile, UserInfo, Week } from "./resources";
+export {
+	Advert,
+	AdvertPreview,
+	FinalAssessment,
+	Homework,
+	HomeworkFile,
+	Assessment,
+	Absent,
+	Mark,
+	Message,
+	MessagePreview,
+	Period,
+	PeriodWeeks,
+	StoredFile,
+	UploadedFile,
+	UserInfo,
+	Week
+} from "./resources";
 export { fromEljurAPI, byStudents, SubjectBase, UserDataBase } from "./utils";
 export type {
 	IDiaryDay,
@@ -55,6 +72,7 @@ export type {
 	IMessagePreview,
 	IPeriod,
 	IPeriodWeeks,
+	IStoredFile,
 	IUploadedFile,
 	IUserInfo,
 	IWeek

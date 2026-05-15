@@ -1,5 +1,6 @@
 import z from "zod";
 import { UserInfo } from "./UserInfo";
+import { HomeworkFile } from "./HomeworkFile";
 
 export const MessagePreview = z.object({
 	date: z.string(),
@@ -27,7 +28,8 @@ export const Message = MessagePreview.pick({
 	user_from: true
 }).extend({
 	text: z.string(),
-	user_to: z.array(MessagePreview.shape.user_from)
+	user_to: z.array(MessagePreview.shape.user_from),
+	files: z.array(HomeworkFile.pick({ filename: true, link: true })).optional()
 });
 
 export type IMessage = z.input<typeof Message>;
