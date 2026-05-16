@@ -9,7 +9,7 @@ export const SubjectFinalAssessments = SubjectBase.extend({
 export type ISubjectFinalAssessments = z.input<typeof SubjectFinalAssessments>;
 
 export const FinalAssessmentsRecord = UserDataBase.extend({
-	items: z.array(z.object(FinalAssessment))
+	items: z.array(SubjectFinalAssessments)
 });
 
 export type IFinalAssessmentsRecord = z.input<typeof FinalAssessmentsRecord>;
