@@ -1,6 +1,6 @@
 {
 	"name": "@betterjournal/eljur-api",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "Unofficial library with entities for Eljur (ЭлЖур) API",
 	"type": "module",
 	"main": "dist/cjs/index.js",
