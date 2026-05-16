@@ -7,14 +7,14 @@ export const Period = Week.pick({
 }).extend({
 	ambigious: z.unknown(),
 	disabled: z.unknown(),
-	fullname: z.string(),
-	name: z.string()
+	fullname: z.string().meta({ description: "Название периода.", examples: ["I полугодие", "I четверть"] }),
+	name: z.string().meta({ description: "Обозначение периода.", example: "I" })
 });
 
 export type IPeriod = z.input<typeof Period>;
 
 export const PeriodWeeks = Period.extend({
-	weeks: z.array(Week)
+	weeks: z.array(Week).meta({ description: "Недели данного периода." })
 });
 
 export type IPeriodWeeks = z.input<typeof PeriodWeeks>;

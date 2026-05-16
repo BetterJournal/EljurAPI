@@ -18,8 +18,8 @@ export type ISubjectHomework = z.input<typeof SubjectHomework>;
 
 export const HomeworkDay = z.object({
 	items: z.record(SubjectHomework.shape.name, SubjectHomework),
-	name: z.string(),
-	title: z.string()
+	name: z.string().meta({ description: "Дата YYYYMMDD." }),
+	title: z.string().meta({ description: "День недели.", examples: ["Понедельник", "Пятница"] })
 });
 
 export type IHomeworkDay = z.input<typeof HomeworkDay>;

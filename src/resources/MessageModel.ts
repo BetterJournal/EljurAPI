@@ -3,18 +3,18 @@ import { UserInfo } from "./UserInfo";
 import { HomeworkFile } from "./HomeworkFile";
 
 export const MessagePreview = z.object({
-	date: z.string(),
-	id: z.coerce.number(),
-	short_text: z.string(),
-	subject: z.string(),
-	unread: z.boolean(),
+	date: z.string().meta({ description: "Дата сообщения (YYYY-MM-DD HH:MM:SS).", example: "2026-01-01 00:00:00" }),
+	id: z.coerce.number().meta({ description: "ID письма." }),
+	short_text: z.string().meta({ description: "Начальный отрывок письма (или всё письмо, если оно маленькое)." }),
+	subject: z.string().meta({ description: "Тема письма" }),
+	unread: z.boolean().meta({ description: "Прочитанно ли письмо" }),
 	user_from: UserInfo.pick({
 		firstname: true,
 		lastname: true,
 		middlename: true,
 		name: true
-	}),
-	with_files: z.boolean(),
+	}).meta({ description: "Отправитель" }),
+	with_files: z.boolean().meta({ description: "Приложены ли файлы к письму" }),
 	with_resources: z.boolean()
 });
 
@@ -27,8 +27,17 @@ export const Message = MessagePreview.pick({
 	subject: true,
 	user_from: true
 }).extend({
-	text: z.string(),
-	user_to: z.array(MessagePreview.shape.user_from),
+	text: z.string().meta({ description: "Содержимое письма" }),
+	user_to: z
+		.array(
+			UserInfo.pick({
+				firstname: true,
+				lastname: true,
+				middlename: true,
+				name: true
+			})
+		)
+		.meta({ description: "Получатели" }),
 	files: z.array(HomeworkFile.pick({ filename: true, link: true })).optional()
 });
 

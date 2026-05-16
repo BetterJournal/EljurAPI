@@ -4,7 +4,7 @@ import { UserDataBase } from "@/utils";
 
 export const DiaryRecord = UserDataBase.extend({
 	days: z.record(DiaryDay.shape.name, DiaryDay),
-	parent_signed: z.boolean()
+	parent_signed: z.boolean().meta({ description: "Подписан ли дневник родителями." })
 });
 
 export type IDiaryRecord = z.input<typeof DiaryRecord>;

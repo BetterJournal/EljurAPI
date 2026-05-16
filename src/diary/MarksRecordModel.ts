@@ -7,8 +7,8 @@ const Mark = Assessment.extend({
 	max_mark: z.unknown(),
 	mtype: z.object({
 		id: z.number(),
-		short: z.string(),
-		type: z.string()
+		short: z.string().meta({ description: "Аббревиатура метода контроля.", examples: ["КР", "ПвР"] }),
+		type: z.string().meta({ description: "Название метода контроля.", examples: ["Контрольная работа", "Проверочная работа"] })
 	})
 }).or(
 	Absent.extend({
@@ -18,10 +18,10 @@ const Mark = Assessment.extend({
 );
 
 export const SubjectMarks = SubjectBase.extend({
-	average: z.coerce.number<string>(),
-	averageConvert: z.number(),
+	average: z.coerce.number<string>().meta({ description: "Средняя арифметическая оценка." }),
+	averageConvert: z.number().meta({ description: "Округлённая отметка в меньшую сторону. Наверное, для выделения цвета в приложении." }),
 	color_hex: z.unknown(),
-	lesson_id: z.coerce.number<string>(),
+	lesson_id: z.coerce.number<string>().meta({ description: "ID учебного предмета." }),
 	marks: z.array(Mark)
 });
 

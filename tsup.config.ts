@@ -17,13 +17,13 @@ const defaultConfig = {
 
 export default defineConfig([
 	{
-		entry: ["src/index.ts"],
+		entry: ["src/open-api-index.ts"],
 		format: ["cjs"],
 		outDir: "dist/cjs",
 		...defaultConfig
 	},
 	{
-		entry: ["src/index.ts"],
+		entry: ["src/open-api-index.ts"],
 		format: ["esm"],
 		outDir: "dist/esm",
 		...defaultConfig

@@ -11,10 +11,10 @@ export const AdvertPreview = MessagePreview.pick({
 	with_files: true,
 	with_resources: true
 }).extend({
-	date: z.iso.date(),
-	date_actual_before: z.iso.date(),
-	user_from_string: z.string(),
-	users_to: z.string()
+	date: z.iso.date().meta({ description: "Дата публикации объявления, YYYY-MM-DD" }),
+	date_actual_before: z.iso.date().meta({ description: "Объявление актуально до, YYYY-MM-DD" }),
+	user_from_string: z.string().meta({ description: "Фамилия и инициалы", example: "Иванов И. И." }),
+	users_to: z.string().meta({ description: "Получатели", examples: ["Всей школе", "Родители&nbsp;<span>&middot;</span> Обучающиеся&nbsp;<span>&middot;</span> Учителя"] })
 });
 
 export type IAdvertPreview = z.input<typeof AdvertPreview>;
