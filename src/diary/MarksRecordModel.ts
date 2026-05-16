@@ -5,11 +5,11 @@ import { SubjectBase, UserDataBase } from "@/utils";
 const Mark = Assessment.extend({
 	lesson_comment: z.unknown(),
 	max_mark: z.unknown(),
-	mtype: {
+	mtype: z.object({
 		id: z.number(),
 		short: z.string(),
 		type: z.string()
-	}
+	})
 }).or(
 	Absent.extend({
 		lesson_comment: z.unknown(),
@@ -22,7 +22,7 @@ export const SubjectMarks = SubjectBase.extend({
 	averageConvert: z.number(),
 	color_hex: z.unknown(),
 	lesson_id: z.coerce.number<string>(),
-	marks: z.array(Mark),
+	marks: z.array(Mark)
 });
 
 export type ISubjectMarks = z.input<typeof SubjectMarks>;
