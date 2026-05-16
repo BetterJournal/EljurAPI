@@ -26,7 +26,7 @@
 > [!NOTE] 
 > Данная документация основана на данной библиотеке, а точнее её ветке [`open-api`](https://github.com/BetterJournal/EljurAPI/tree/open-api). Она была отдельно создана, чтобы не захламлять библиотеку лишними зависимостями и кусочками кода.
 
-Для просмотра полной документации посетите [https://betterjournal.ru/api](https://betterjournal.ru/api).
+Для просмотра полной документации посетите [https://betterjournal.ru/eljur-api](https://betterjournal.ru/eljur-api).
 
 ## Использование
 

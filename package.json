@@ -1,8 +1,21 @@
 {
 	"name": "@betterjournal/eljur-api",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"description": "Unofficial library with entities for Eljur (ЭлЖур) API",
 	"type": "module",
+	"homepage": "https://betterjournal.ru/eljur-api",
+	"repository": "github:BetterJournal/EljurAPI",
+	"publishConfig": {
+		"access": "public"
+	},
+	"keywords": [
+		"eljur",
+		"betterjournal",
+		"russian",
+		"api",
+		"zod",
+		"ts"
+	],
 	"main": "dist/cjs/index.js",
 	"module": "dist/esm/index.js",
 	"types": "dist/esm/index.d.ts",
